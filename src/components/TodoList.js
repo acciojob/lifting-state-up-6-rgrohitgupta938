@@ -5,8 +5,8 @@ const TodoList = ({ todos, onClickComplete }) => {
     <div>
       <h2>Child Component</h2>
       <ul>
-        {todos.map((t) => (
-          <li>
+        {todos.map((t, inx) => (
+          <li key={inx}>
             {t.text}
             {!t.completed && (
               <button onClick={() => onClickComplete(t.id)}>Complete</button>
